@@ -30,8 +30,6 @@ class CreateArticlesImages extends Migration
      */
     public function down()
     {
-        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('ArticlesImages');
-        Schema::enableForeignKeyConstraints();
     }
 }

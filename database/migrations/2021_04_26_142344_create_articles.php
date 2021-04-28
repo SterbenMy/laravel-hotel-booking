@@ -28,10 +28,10 @@ class CreateArticles extends Migration
             $table->BigInteger('image_id')->unique()->unsigned();
             $table->BigInteger('comments_id')->unsigned();
             $table->BigInteger('category_id')->unsigned();
-            $table->foreign('author_id')->references('id')->on('users');
-            $table->foreign('image_id')->references('id')->on('ArticlesImages');
-            $table->foreign('comments_id')->references('id')->on('ArticlesComments');
-            $table->foreign('category_id')->references('id')->on('ArticlesCategories');
+            $table->foreign('author_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('image_id')->references('id')->on('ArticlesImages')->onDelete('cascade');
+            $table->foreign('comments_id')->references('id')->on('ArticlesComments')->onDelete('cascade');
+            $table->foreign('category_id')->references('id')->on('ArticlesCategories')->onDelete('cascade');
         });
     }
 
@@ -42,8 +42,6 @@ class CreateArticles extends Migration
      */
     public function down()
     {
-
-        Schema::dropIfExists('Article');
-
+        Schema::dropIfExists('Articles');
     }
 }

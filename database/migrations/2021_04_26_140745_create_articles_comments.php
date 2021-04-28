@@ -30,8 +30,6 @@ class CreateArticlesComments extends Migration
      */
     public function down()
     {
-        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('ArticlesComments');
-        Schema::enableForeignKeyConstraints();
     }
 }
