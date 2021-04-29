@@ -7,8 +7,43 @@ use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
+    protected $fillable = [
+        'title',
+        'short_description',
+        'content',
+        'modified_at',
+        'published_at',
+        'SEO_title',
+        'SEO_description',
+        'slug',
+        'author_id',
+        'image_id',
+        'category_id'
+    ];
 
+    public function categories()
+    {
+        return $this->belongsTo(ArticleCategory::class);
+    }
 
-    protected $table = 'Articles';
+    public function comments()
+    {
+        return $this->hasMany(ArticleComment::class);
+    }
+
+    public function images()
+    {
+        return $this->hasOne(ArticleImage::class);
+    }
+
+    public function tagsConnections(){
+        return $this->hasMany(ArticleTagConnection::class);
+    }
+
+    public function users(){
+        return $this->belongsTo(User::class);
+    }
+
+    protected $table = 'articles';
     use HasFactory;
 }

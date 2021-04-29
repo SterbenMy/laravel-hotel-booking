@@ -8,6 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class ArticleTag extends Model
 {
 
-    protected $table = 'ArticlesTags';
+    protected $fillable=[
+        'name',
+        'created_at',
+        'updated_up',
+        'slug'
+];
+
+    public function articles_tags_connections(){
+        return $this->hasMany(ArticleTagConnection::class);
+    }
+    protected $table = 'tags';
     use HasFactory;
 }
