@@ -7,7 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class ArticleComment extends Model
 {
+    protected $fillable=[
+        'message',
+        'created_at',
+        'author',
+        'updated_at',
+        'approved',
+        'article_id'
+    ];
 
-    protected $table = 'ArticlesComments';
+    public function articles(){
+        return $this->belongsTo(Article::class);
+    }
+    protected $table = 'comments';
     use HasFactory;
 }

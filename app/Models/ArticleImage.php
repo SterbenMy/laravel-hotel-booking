@@ -7,7 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class ArticleImage extends Model
 {
+    protected $fillable=[
+        'name',
+        'created_at',
+        'updated_up',
+        'size',
+        'path'
+    ];
 
-    protected $table = 'ArticlesImages';
+    public function articles(){
+        return $this->hasOne(Article::class);
+    }
+    protected $table = 'images';
     use HasFactory;
 }
