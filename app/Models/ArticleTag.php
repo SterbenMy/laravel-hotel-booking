@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ArticleTag extends Model
 {
-
+const UPDATED_AT = 'updated_up';
     protected $fillable=[
         'name',
         'created_at',

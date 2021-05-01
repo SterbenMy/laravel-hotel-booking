@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ArticleComment extends Model
 {
+
     protected $fillable=[
         'message',
         'created_at',

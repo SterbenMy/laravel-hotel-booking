@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class ArticleCategory extends Model
 {
+    const UPDATED_AT = 'updated_up';
+
     protected $fillable=[
         'name',
         'create_at',
