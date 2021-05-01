@@ -16,8 +16,8 @@ class CreateArticlesTagsConnection extends Migration
 
 
         Schema::create('ArticlesTagsConnection', function (Blueprint $table) {
-            $table->BigInteger('article_id')->unsigned();
-            $table->BigInteger('tag_id')->unsigned();
+            $table->BigInteger('article_id')->unsigned()->nullable();
+            $table->BigInteger('tag_id')->unsigned()->nullable();
             $table->foreign('article_id')->references('id')->on('Articles')->onDelete('cascade');
             $table->foreign('tag_id')->references('id')->on('ArticlesTags')->onDelete('cascade');
 

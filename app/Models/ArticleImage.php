@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ArticleImage extends Model
 {
+    const UPDATED_AT = 'updated_up';
     protected $fillable=[
         'name',
         'created_at',

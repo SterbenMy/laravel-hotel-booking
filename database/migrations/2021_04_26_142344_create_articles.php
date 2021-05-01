@@ -24,10 +24,10 @@ class CreateArticles extends Migration
             $table->string('SEO_title', 70);
             $table->string('SEO_description', 150);
             $table->string('slug', 255)->unique();
-            $table->BigInteger('author_id')->unsigned();
-            $table->BigInteger('image_id')->unique()->unsigned();
-            $table->BigInteger('comments_id')->unsigned();
-            $table->BigInteger('category_id')->unsigned();
+            $table->BigInteger('author_id')->unsigned()->nullable();
+            $table->BigInteger('image_id')->unique()->unsigned()->nullable();
+            $table->BigInteger('comments_id')->unsigned()->nullable();
+            $table->BigInteger('category_id')->unsigned()->nullable();
             $table->foreign('author_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('image_id')->references('id')->on('ArticlesImages')->onDelete('cascade');
             $table->foreign('comments_id')->references('id')->on('ArticlesComments')->onDelete('cascade');

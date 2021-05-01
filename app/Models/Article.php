@@ -7,10 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
+    const CREATED_AT = 'create_at';
+    const UPDATED_AT = 'modified_at';
+
     protected $fillable = [
         'title',
         'short_description',
         'content',
+        'create_at',
         'modified_at',
         'published_at',
         'SEO_title',

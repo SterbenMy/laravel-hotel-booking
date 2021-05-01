@@ -18,7 +18,7 @@ class CreateArticlesCategories extends Migration
             $table->string('name', 255);
             $table->dateTime('created_at', $precision = 0);
             $table->dateTime('updated_up', $precision = 0);
-            $table->string('parent_category', 255);
+            $table->string('parent_category', 255)->nullable();
             $table->string('slug', 255);
             $table->string('seo_title', 70);
             $table->string('seo_description', 150);
