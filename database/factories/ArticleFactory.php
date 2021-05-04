@@ -33,7 +33,7 @@ class ArticleFactory extends Factory
             'image_id' => rand(1,3),
             'SEO_title' => $this->faker->title(),
             'SEO_description' => $this->faker->text(100),
-            'slug' => $this->faker->unique()->title()
+            'slug' => $this->faker->unique()->text(10)
 
         ];
     }

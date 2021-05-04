@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+Route::get('/', [\App\Http\Controllers\ArticleController::class, 'show']);
+Route::get('article/{id}',[\App\Http\Controllers\ArticleController::class,'showData']);
+Route::get('/categories', [\App\Http\Controllers\CategoryController::class, 'show']);
+Route::get('category/{id}',[\App\Http\Controllers\CategoryController::class,'showData']);
+Route::get('tags/', [\App\Http\Controllers\TagController::class, 'show']);
+Route::get('tag/{id}',[\App\Http\Controllers\TagController::class,'showData']);
