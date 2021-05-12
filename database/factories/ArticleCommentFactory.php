@@ -22,10 +22,10 @@ class ArticleCommentFactory extends Factory
     public function definition()
     {
         return [
-            'message'=>$this->faker->text,
+            'message'=>$this->faker->text(60),
             'created_at'=>$this->faker->dateTimeThisMonth()->format('Y-m-d H:i:s'),
             'updated_at'=>$this->faker->dateTimeThisMonth()->format('Y-m-d H:i:s'),
-            'article_id' => rand(1,3),
+            'article_id' => rand(1,9),
             'author' => $this->faker->name
         ];
     }
