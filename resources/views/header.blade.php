@@ -38,7 +38,7 @@
                     <a class="nav-link" href="{{'/'}}">Articles</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link ab" href="{{'/'}}">Contact</a>
+                    <a class="nav-link ab" href="{{'/email'}}">Contact</a>
                 </li>
             </ul>
         </div>

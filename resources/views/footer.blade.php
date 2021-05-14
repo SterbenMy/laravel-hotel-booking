@@ -30,7 +30,7 @@
                         <a href="{{'/'}}">Articles</a>
                     </li>
                     <li>
-                        <a href="{{'/'}}">Contact us</a>
+                        <a href="{{'/email'}}">Contact us</a>
                     </li>
                 </ul>
             </div>
