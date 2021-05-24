@@ -2,18 +2,23 @@
 
 namespace App\Providers;
 
+use App\Services\FirstRequestLogger;
+use App\Services\RequestLoggerInterface;
 use Illuminate\Support\ServiceProvider;
+use Psr\Log\LoggerInterface;
 
 class AppServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
      *
-     * @return void
+     * @return FirstRequestLogger
      */
     public function register()
     {
-        //
+        $this->app->bind(RequestLoggerInterface::class, function () {
+                return new FirstRequestLogger($this->app->make(LoggerInterface::class));
+        });
     }
 
     /**
@@ -21,8 +26,9 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public
+    function boot()
     {
-        //
+
     }
 }
