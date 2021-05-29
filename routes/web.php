@@ -5,9 +5,8 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TagController;
-use App\Http\Middleware\RequestLoggingMiddleware;
+use App\Http\Middleware\LoggingMiddleware;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,13 +17,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::middleware([LoggingMiddleware::class])->group(function(){
+    Route::get('/', [HomeController::class, 'index']);
+    Route::get('article/{id}', [ArticleController::class, 'showArticle']);
+    Route::get('/category/{id}', [CategoryController::class, 'show']);
+    Route::get('/tag/{id}', [TagController::class, 'show']);
+    Route::get('/email', [ContactFormController::class, 'index']);
 
-Route::get('/', [HomeController::class, 'index']);
-Route::get('article/{id}', [ArticleController::class, 'index']);
-Route::get('/category/{id}', [CategoryController::class, 'index']);
-Route::get('/tag/{id}', [TagController::class, 'index']);
-Route::get('/email', [ContactFormController::class, 'index']);
-Route::post('/email', [ContactFormController::class, 'sendMailas']);
-Route::get('/email', ['uses' => function () {
-    return view('mail.email');
-},'middleware'=> RequestLoggingMiddleware::class]);
+});
+Route::post('/email', [ContactFormController::class,'sendMail']);
