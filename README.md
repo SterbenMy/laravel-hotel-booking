@@ -65,3 +65,13 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+## How to run the project
+1.  Create .env file as an .env.example and change where necessary
+2.  Create docker-compose.yml file as a docker-compose.yml.example and change where necessary
+3.  Run docker-compose ( docker-compose up -d )
+4.  Run php artisan migrate (create  database)
+5.  Run php artisan db:seed (create data for db ) few times 
+4.  Open in browser localhost:88
+    
