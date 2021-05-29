@@ -24,7 +24,6 @@ services:
       - "8843:443"
     volumes:
       - "/home/sterbenm/www/laravel-intro/:/var/www"
-#      - "/home/sterbenm/www/laravel-intro/docker-containers/nginx/conf.d/:/etc/nginx/conf.d/"
     networks:
       - laravel_intro_network
 
