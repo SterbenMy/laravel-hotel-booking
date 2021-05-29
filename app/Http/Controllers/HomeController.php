@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -15,9 +13,6 @@ class HomeController extends Controller
             ->whereNotNull('articles.published_at')
             ->orderBy('articles.create_at','desc')
             ->paginate(6);
-//        $articles=DB::table('articles')
-//            ->join('images','articles.image_id',"=",'images.id')
-//            ->get();
         return view('pages.homepage',compact('articles'));
     }
 }

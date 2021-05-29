@@ -4,7 +4,7 @@
             <div class="card">
                 <div class="card-body">
                     <h1>Hello </h1>
-                    <p>I send email to you {{$email}}, my name is {{$name}}, my subject {{$subject}}</p>
+                    <p>I send email to you {{$email}}, my name is {{$name}}</p>
                     <p> {{$content}}</p>
                     <br>
                     <p>Bye</p>

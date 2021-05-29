@@ -22,15 +22,15 @@ class ArticleFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->title,
+            'title' => $this->faker->sentence(3),
             'short_description' => $this->faker->realText(),
             'published_at' => $this->faker->dateTimeThisMonth()->format('Y-m-d H:i:s'),
             'create_at' => $this->faker->dateTimeThisMonth()->format('Y-m-d H:i:s'),
             'modified_at' => $this->faker->dateTimeThisMonth()->format('Y-m-d H:i:s'),
             'content' => $this->faker->realText(400),
-            'category_id' => rand(1,6),
-            'author_id'=>rand(1,9),
-            'image_id' => rand(1,20),
+            'category_id' => rand(1, 6),
+            'author_id' => rand(1, 9),
+            'image_id' => rand(1, 20),
             'SEO_title' => $this->faker->title(),
             'SEO_description' => $this->faker->text(150),
             'slug' => $this->faker->unique()->regexify('[A-Za-z0-9]{20}')

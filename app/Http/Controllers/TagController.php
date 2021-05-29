@@ -4,14 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\ArticleTag;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+
 
 class TagController extends Controller
 {
-    public function index($id){
-        $tg=
-           // DB::table('tags')->
+    public function show($id){
+        $tag=
             ArticleTag::select('tags.name',
                 'tagsConnections.tag_id',
                 'tagsConnections.article_id')
@@ -24,7 +22,7 @@ class TagController extends Controller
                                         'articles.short_description',
                                         'tg.tag_id as id',
                                         'tg.name as tagName')
-            ->joinSub($tg,'tg',function($join){
+            ->joinSub($tag,'tg',function($join){
                 $join->on('tg.article_id',"=",'articles.id');
             })
             ->join('images','articles.image_id',"=",'images.id')

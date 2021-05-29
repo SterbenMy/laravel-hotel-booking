@@ -26,16 +26,16 @@
         <div class="collapse navbar-collapse nav1" id="navbarNav">
             <ul class="navbar-nav nav1 ">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{'/'}}">Home</a>
+                    <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{'/'}}">About</a>
+                    <a class="nav-link" href="/">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{'/'}}">Services</a>
+                    <a class="nav-link" href="/">Services</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{'/'}}">Articles</a>
+                    <a class="nav-link" href="/">Articles</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link ab" href="{{'/email'}}">Contact</a>

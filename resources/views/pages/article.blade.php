@@ -17,10 +17,10 @@
                     <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="{{"/"}}">Home</a>
+                                <a href="/">Home</a>
                             </li>
                             <li class="breadcrumb-item">
-                                <a href="{{"/"}}">Article</a>
+                                <a href="/">Article</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
                                 {{$article->title}}
@@ -54,9 +54,7 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
-{{--    @foreach($article as $tag){{$tag}}@endforeach--}}
 @endsection
