@@ -12,6 +12,9 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 /docker-containers
-docker-containers/
+docker-containers/db
 /node-v14.16.1-linux-x64
 _ide_helper.php
+.idea
+docker-compose.yml
+
