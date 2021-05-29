@@ -17,7 +17,7 @@ class ArticleImage extends Model
     ];
 
     public function articles(){
-        return $this->hasOne(Article::class);
+        return $this->belongsTo(Article::class);
     }
     protected $table = 'images';
     use HasFactory;

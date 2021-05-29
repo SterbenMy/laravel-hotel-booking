@@ -15,3 +15,8 @@ mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
         //
     ]);
+mix.copy('node_modules/bootstrap/dist/css/bootstrap.css','public/css')
+mix.copy('node_modules/@fortawesome/fontawesome-free/css/all.css','public/css')
+mix.copy('node_modules/jquery/dist/jquery.slim.js', 'public/js')
+mix.copy('node_modules/bootstrap/dist/js/bootstrap.bundle.js', 'public/js')
+mix.copy('node_modules/@fortawesome/fontawesome-free/js/all.js', 'public/js')

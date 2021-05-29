@@ -26,7 +26,7 @@ class ArticleTagFactory extends Factory
             'name'=>$this->faker->name,
             'created_at'=>$this->faker->dateTimeThisMonth()->format('Y-m-d H:i:s'),
             'updated_up'=>$this->faker->dateTimeThisMonth()->format('Y-m-d H:i:s'),
-            'slug' => $this->faker->unique()->title()
+            'slug' => $this->faker->unique()->regexify('[A-Za-z0-9]{20}')
         ];
     }
 }

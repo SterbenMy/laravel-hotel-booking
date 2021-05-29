@@ -13,3 +13,5 @@ npm-debug.log
 yarn-error.log
 /docker-containers
 docker-containers/
+/node-v14.16.1-linux-x64
+_ide_helper.php
