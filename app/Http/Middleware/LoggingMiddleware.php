@@ -3,17 +3,19 @@
 namespace App\Http\Middleware;
 
 use App\Services\RequestLoggerInterface;
+use App\Services\ResponseLoggerInterface;
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 
-class RequestLoggingMiddleware
+class LoggingMiddleware
 {
     private RequestLoggerInterface $requestLogger;
+    private ResponseLoggerInterface $responseLogger;
 
-    public function __construct(RequestLoggerInterface $requestLogger)
+    public function __construct(RequestLoggerInterface $requestLogger,ResponseLoggerInterface $responseLogger)
     {
         $this->requestLogger = $requestLogger;
+        $this->responseLogger = $responseLogger;
     }
 
     /**
@@ -26,13 +28,10 @@ class RequestLoggingMiddleware
     public function handle(Request $request, Closure $next)
     {
         $this->requestLogger->logRequest($request);
-        if(app()->environment('local')){
-            $log = [
-                'METHOD' => $request->getMethod(),
-                'REQUEST_BODY' => $request->all()
-            ];
-            Log::info(json_encode($log));
-        }
-        return $next($request);
+        $response= $next($request);
+
+        $this->responseLogger->logResponse($response);
+
+        return $response;
     }
 }
