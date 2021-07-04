@@ -119,6 +119,8 @@
       <excludeFolder url="file://$MODULE_DIR$/.idea/dataSources" />
       <excludeFolder url="file://$MODULE_DIR$/vendor" />
       <excludeFolder url="file://$MODULE_DIR$/node-v14.16.1-linux-x64" />
+      <excludeFolder url="file://$MODULE_DIR$/docker-containers/nginx" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/55" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

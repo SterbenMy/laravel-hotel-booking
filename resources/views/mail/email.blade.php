@@ -47,7 +47,7 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="inputName">Name</label>
-                                    <input type="text" name="name" id="name" class="form-control" placeholder="Enter Name">
+                                    <input type="text" name="name" id="name" class="form-control" placeholder="Enter Name" required>
                                     @error('name')
                                     <span class="text-danger"> {{ $message }} </span>
                                     @enderror
@@ -56,25 +56,25 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="inputEmail">Email</label>
-                                    <input type="email" name="email" id="email" class="form-control" placeholder="Enter Email">
+                                    <input type="email" name="email" id="email" class="form-control" placeholder="Enter Email" required>
                                     @error('email')
-                                    <span class="text-danger"> {{ $message }} </span>
+                                    <span class="text-danger"> {{ $email }} </span>
                                     @enderror
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputSubject">Subject</label>
-                            <input type="text" name="subject" id="subject" class="form-control" placeholder="Enter subject">
+                            <input type="text" name="subject" id="subject" class="form-control" placeholder="Enter subject" required>
                             @error('subject')
-                            <span class="text-danger"> {{ $message }} </span>
+                            <span class="text-danger"> {{ $subject }} </span>
                             @enderror
                         </div>
                         <div class="form-group">
                             <label for="inputMessage">Message</label>
-                            <textarea type="text" name="content" id="content" class="form-control" placeholder="Enter Your Message"></textarea>
+                            <textarea type="text" name="content" id="content" class="form-control" placeholder="Enter Your Message" required></textarea>
                             @error('content')
-                            <span class="text-danger"> {{ $message }} </span>
+                            <span class="text-danger"> {{ $content }} </span>
                             @enderror
                         </div>
                         <div class="text-center">

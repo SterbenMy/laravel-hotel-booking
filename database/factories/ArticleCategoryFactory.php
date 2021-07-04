@@ -22,10 +22,9 @@ class ArticleCategoryFactory extends Factory
     public function definition()
     {
         return [
-            'name'=>$this->faker->name,
-            'created_at'=>$this->faker->dateTimeThisMonth()->format('Y-m-d H:i:s'),
-            'updated_up'=>$this->faker->dateTimeThisMonth()->format('Y-m-d H:i:s'),
-           // 'parent_category' => rand(1,3),
+            'name' => $this->faker->name,
+            'created_at' => $this->faker->dateTimeThisMonth()->format('Y-m-d H:i:s'),
+            'updated_up' => $this->faker->dateTimeThisMonth()->format('Y-m-d H:i:s'),
             'slug' => $this->faker->unique()->regexify('[A-Za-z0-9]{20}'),
             'SEO_title' => $this->faker->title(),
             'SEO_description' => $this->faker->text(150)

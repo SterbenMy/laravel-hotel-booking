@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SendEmailValidationRequest;
+use App\Services\ContactMailer;
 use Illuminate\Contracts\Mail\Mailer;
-use Illuminate\Http\Request;
-use Illuminate\Mail\Message;
-use Mail;
 
 class ContactFormController extends Controller
 {
@@ -13,9 +12,9 @@ class ContactFormController extends Controller
     /**
      * @var Mailer
      */
-    private $mailer;
+    private ContactMailer $mailer;
 
-    public function __construct(Mailer $mailer)
+    public function __construct(ContactMailer $mailer)
     {
         $this->mailer = $mailer;
     }
@@ -25,41 +24,10 @@ class ContactFormController extends Controller
         return view('mail.email');
     }
 
-    public function sendMailas(Request $request)
+    public function sendMail(SendEmailValidationRequest $request)
     {
-
-        $request->validate([
-            'email' => 'required',
-            'subject' => 'required',
-            'name' => 'required',
-            'content'=>'required'
-        ]);
-
-        $data = [
-            'subject' => $request->input('subject'),
-            'name' => $request->input('name'),
-            'email' => $request->input('email'),
-            'content' => $request->input('content')
-        ];
-
-        $this->mailer->send('mail.email-template',
-            $data,
-            function(Message $message) use ($data) {
-            $message->to($data['email'])
-                    ->subject($data['subject'])
-                    ->from('cristi@cristi.com',$data['name']);
-        });
-
+        $this->mailer->send($request->validated());
         return back()->with(['message' => 'Email successfully sent!']);
     }
-
-//    public function __invoke()
-//    {
-//                Mail::send('mail.mailTest',['mail'=>'cristi@cristi.com'], function(Message $message){
-//                  $message->to('text@gmail.com');
-//                  $message->subject("test mail");
-//                });
-//
-//    }
 
 }

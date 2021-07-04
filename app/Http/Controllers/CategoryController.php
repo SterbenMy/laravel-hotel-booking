@@ -7,9 +7,8 @@ use App\Models\ArticleCategory;
 
 class CategoryController extends Controller
 {
-    public function index($id){
+    public function show($id){
         $articles =
-//            DB::table('articles')->
                  Article::select('articles.id','articles.title','articles.short_description','articles.create_at','images.path','articles.category_id')
                  ->join('images','images.id',"=",'articles.image_id');
 

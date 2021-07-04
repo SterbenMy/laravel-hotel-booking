@@ -45,17 +45,11 @@
                         </div>
                     </div>
                 </div>
-
                 @endforeach
-
             </div>
             <ul class="pagination">
                 {{$articles->links('paginator')}}
             </ul>
-
         </div>
     </section>
-{{--    @foreach($articles as $article)--}}
-{{--    {{$article}}--}}
-{{--    @endforeach--}}
 @endsection
