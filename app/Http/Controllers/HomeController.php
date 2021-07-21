@@ -13,6 +13,6 @@ class HomeController extends Controller
             ->whereNotNull('articles.published_at')
             ->orderBy('articles.create_at','desc')
             ->paginate(6);
-        return view('pages.homepage',compact('articles'));
+        return view('pages.articles',compact('articles'));
     }
 }

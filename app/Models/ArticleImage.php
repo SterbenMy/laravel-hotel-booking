@@ -19,6 +19,12 @@ class ArticleImage extends Model
     public function articles(){
         return $this->belongsTo(Article::class);
     }
+    public function teams(){
+        return $this->belongsTo(Team::class);
+    }
+    public function hotels(){
+        return $this->belongsTo(Hotel::class);
+    }
     protected $table = 'images';
     use HasFactory;
 }

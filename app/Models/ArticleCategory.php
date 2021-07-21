@@ -9,7 +9,7 @@ class ArticleCategory extends Model
 {
     const UPDATED_AT = 'updated_up';
 
-    protected $fillable=[
+    protected $fillable = [
         'name',
         'create_at',
         'updated_up',
@@ -18,16 +18,20 @@ class ArticleCategory extends Model
         'SEO_title',
         'SEO_description'
     ];
-/// self join ????? posibil gresit sau posibil drept (eu cred ca e drept dar nu 100%)
-    public function categories(){
+
+    public function categories()
+    {
         return $this->hasMany(self::class, 'id');
     }
-    public function parent_category(){
-        return$this->belongsTo(self::class,'parent_category');
-    }
-    //////////////
 
-    public function articles(){
+    public function parent_category()
+    {
+        return $this->belongsTo(self::class, 'parent_category');
+    }
+
+
+    public function articles()
+    {
         return $this->hasMany(Article::class);
     }
 
