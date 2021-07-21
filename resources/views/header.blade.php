@@ -20,7 +20,8 @@
         <a class="navbar-brand">
             <img src="{{asset('img/logo.png')}}" width="100" height="100" alt="logo">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse nav1" id="navbarNav">
@@ -29,17 +30,22 @@
                     <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/">About</a>
+                    <a class="nav-link" href="/about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Services</a>
+                    <a class="nav-link" href="/hotels">Our Hotels</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Articles</a>
+                    <a class="nav-link" href="/articles">Articles</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link ab" href="{{'/email'}}">Contact</a>
+                    <a class="nav-link ab" href="/email">Contact</a>
                 </li>
+
+                <li class="nav-item ">
+                    <cart-component :product-id="1"></cart-component>
+                </li>
+
             </ul>
         </div>
     </nav>
