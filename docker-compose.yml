@@ -65,6 +65,20 @@ services:
       - "8125:1025"
     networks:
       - laravel_intro_network
+      
+  swagger:
+    container_name: swagger-ui
+    image: swaggerapi/swagger-ui
+    volumes:
+      - "/home/sterbenm/www/laravel-intro/hotels_specification.yaml:/usr/share/nginx/html/hotels_specification.yaml"
+    environment:
+      API_URL: hotels_specification.yaml
+    ports:
+      - "90:8080"
+    networks:
+      - laravel_intro_network
+      
+      
 networks:
   laravel_intro_network:
     driver: bridge
