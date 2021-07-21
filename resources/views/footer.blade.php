@@ -27,10 +27,10 @@
                         <a href="/">Services</a>
                     </li>
                     <li>
-                        <a href="/">Articles</a>
+                        <a href="/articles">Articles</a>
                     </li>
                     <li>
-                        <a href="{{'/email'}}">Contact us</a>
+                        <a href="/email">Contact us</a>
                     </li>
                 </ul>
             </div>
